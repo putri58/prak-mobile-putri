@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFDE7"
+    tools:context=".pertemuan2.SecondActivity">
+
+    <View
+        android:id="@+id/decorationCircle"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_marginEnd="-100dp"
+        android:layout_marginTop="-100dp"
+        android:background="@android:color/white"
+        android:alpha="0.4"
+        android:backgroundTint="#FFF59D"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:src="@android:drawable/btn_star_big_on"
+            android:contentDescription="Logo"
+            app:tint="#FBC02D" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Selamat Datang! ✨"
+            android:textAlignment="center"
+            android:textColor="#424242"
+            android:textSize="32sp"
+            android:fontFamily="sans-serif-black" />
+
+        <TextView
+            android:id="@+id/textNama"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Siap jadi juara bareng Ruang Guru?"
+            android:textAlignment="center"
+            android:textColor="#757575"
+            android:textSize="18sp"
+            android:fontFamily="sans-serif-medium" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="0dp"
+            app:strokeWidth="2dp"
+            app:strokeColor="#FDD835">
+
+            <EditText
+                android:id="@+id/inputNama"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@android:color/transparent"
+                android:hint="Ketik nama kerenmu di sini..."
+                android:inputType="textPersonName"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+                android:textColor="#212121"
+                android:textSize="16sp" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSubmit"
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:layout_marginTop="24dp"
+            android:text="Mulai Belajar Sekarang"
+            android:textAllCaps="false"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#424242"
+            app:backgroundTint="#FDD835"
+            app:cornerRadius="16dp"
+            app:rippleColor="#FFF176"
+            app:elevation="4dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Belajar asik, masa depan apik! 🚀"
+            android:textAlignment="center"
+            android:textColor="#FBC02D"
+            android:textSize="14sp"
+            android:textStyle="italic" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
