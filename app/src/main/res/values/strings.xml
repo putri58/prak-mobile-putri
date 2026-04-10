@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">Putri Apps</string>
+    <string name="judul">Verifikasi Login</string>
+    <string name="judul_baru">Kode Berhasil Dikirim</string>
+    <string name="anak_judul">Silahkan periksa nomor Anda</string>
 </resources>
