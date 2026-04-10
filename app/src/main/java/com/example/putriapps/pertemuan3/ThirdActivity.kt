@@ -33,7 +33,7 @@ class ThirdActivity : AppCompatActivity() {
             //Mengambil value dari inputNama dan menampilkan di Logcat
             val nomor = binding.inputNoTujuan.text
 
-            Toast.makeText(this, "Pesan Berhasil Dikirim ke $nomor", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Pesan ini Berhasil Dikirim ke $nomor", Toast.LENGTH_SHORT).show()
         }
     }
 }
