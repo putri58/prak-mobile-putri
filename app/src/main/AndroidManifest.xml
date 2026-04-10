@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PutriApps">
         <activity
-            android:name=".pertemuan2.SecondActivity"
+            android:name=".pertemuan3.ThirdActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,10 +21,13 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".pertemuan2.SecondActivity"
             android:exported="false">
 
         </activity>
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
     </application>
 
 </manifest>
