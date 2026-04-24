@@ -1,0 +1,23 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_search"
+        android:title="Cari"
+        android:icon="@android:drawable/ic_menu_search"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_more"
+        android:title="Lainnya"
+        app:showAsAction="never">
+        <menu>
+            <item
+                android:id="@+id/sub_settings"
+                android:title="Pengaturan Akun" />
+            <item
+                android:id="@+id/sub_about"
+                android:title="Tentang Aplikasi" />
+        </menu>
+    </item>
+</menu>

@@ -33,5 +33,6 @@ class SecondActivity : AppCompatActivity() {
 
             Toast.makeText(this, "Anda telah melakukan klik pada tombol Submit", Toast.LENGTH_SHORT).show()
         }
+
     }
 }

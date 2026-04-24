@@ -3,6 +3,7 @@ package com.example.putriapps.pertemuan3
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.MenuItem
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
@@ -37,6 +38,23 @@ class ThirdActivity : AppCompatActivity() {
             Toast.makeText(this, "Pesan ini Berhasil Dikirim ke $nomor", Toast.LENGTH_SHORT).show()
                 val intent = Intent(this, ThirdResultActivity::class.java)
                 startActivity(intent)
+        }
+        setSupportActionBar(binding.toolbar)
+        supportActionBar?.apply {
+            title = "Activity Fifth"
+            subtitle = "Ini adalah subtitle"
+            setDisplayHomeAsUpEnabled(true)
+            setDisplayShowHomeEnabled(true)
+        }
+    }
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            android.R.id.home -> {
+                onBackPressedDispatcher.onBackPressed()
+                true
+            }
+
+            else -> super.onOptionsItemSelected(item)
         }
     }
 }
