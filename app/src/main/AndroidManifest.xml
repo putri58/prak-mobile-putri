@@ -14,17 +14,23 @@
         android:supportsRtl="false"
         android:theme="@style/Theme.PutriApps">
         <activity
-            android:name=".pertemuan5.WebViewActivity"
-            android:exported="false" />
-        <activity
-            android:name=".pertemuan5.FifthActivity"
-            android:exported="true">
+            android:name=".SplashScreenActivity"
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".AuthActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".pertemuan5.WebViewActivity"
+            android:exported="false" />
+        <activity
+            android:name=".pertemuan5.FifthActivity"
+            android:exported="false" />
         <activity
             android:name=".pertemuan4.FourthActivity"
             android:exported="false" />
