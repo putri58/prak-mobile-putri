@@ -12,6 +12,7 @@ import com.example.putriapps.R
 import com.example.putriapps.databinding.ActivityMainBinding
 import com.example.putriapps.databinding.ActivityThirdBinding
 import com.example.putriapps.pertemuan4.FourthActivity
+import com.example.putriapps.pertemuan7.SeventhActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -40,6 +41,17 @@ class MainActivity : AppCompatActivity() {
             intent.putExtra("nama", "Politeknik Caltex Riau")
             intent.putExtra("asal", "Rumbai")
             intent.putExtra("usia", 25)
+
+            startActivity(intent)
+        }
+
+        binding.button2.setOnClickListener {
+
+            val intent = Intent(this, SeventhActivity::class.java)
+
+//            intent.putExtra("nama", "Politeknik Caltex Riau")
+//            intent.putExtra("asal", "Rumbai")
+//            intent.putExtra("usia", 25)
 
             startActivity(intent)
         }

@@ -14,8 +14,11 @@
         android:supportsRtl="false"
         android:theme="@style/Theme.PutriApps">
         <activity
+            android:name=".pertemuan7.SeventhActivity"
+            android:exported="false" />
+        <activity
             android:name=".SplashScreenActivity"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -24,7 +27,7 @@
         </activity>
         <activity
             android:name=".AuthActivity"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".pertemuan5.WebViewActivity"
             android:exported="false" />
