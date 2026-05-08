@@ -16,28 +16,23 @@ import com.example.putriapps.R
 import com.example.putriapps.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
-
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
-
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        (requireActivity() as AppCompatActivity).setSupportActionBar(binding.toolbar)
-        (requireActivity() as AppCompatActivity).supportActionBar?.apply {
-            title = "Home"
-        }
-
-
-
         // Inflate the layout for this fragment
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        (requireActivity() as AppCompatActivity).setSupportActionBar(binding.toolbar)
+        (requireActivity() as AppCompatActivity).supportActionBar?.apply {
+            title = "Home"
+        }
         val sharedPref = requireContext().getSharedPreferences("user_pref", MODE_PRIVATE)
         binding.button1.setOnClickListener {
 
@@ -50,45 +45,30 @@ class HomeFragment : Fragment() {
             startActivity(intent)
         }
 
-        binding.button2.setOnClickListener {
-
-            val intent = Intent(requireContext(), SeventhActivity::class.java)
-
-//            intent.putExtra("nama", "Politeknik Caltex Riau")
-//            intent.putExtra("asal", "Rumbai")
-//            intent.putExtra("usia", 25)
-
-            startActivity(intent)
-        }
-
-        // FITUR LOGOUT
+        // FITUR BARU LOGOUT
         binding.btnLogout.setOnClickListener {
 
             AlertDialog.Builder(requireContext())
                 .setTitle("Logout")
-                .setMessage("Apakah yakin ingin logout?")
+                .setMessage("Yakin ingin logout?")
                 .setPositiveButton("Ya") { dialog, _ ->
 
-                    // Hapus SharedPreferences
                     val editor = sharedPref.edit()
                     editor.clear()
                     editor.apply()
 
                     dialog.dismiss()
 
-                    // Kembali ke AuthActivity
-                    val intent = Intent(requireContext(), AuthActivity::class.java)
-                    startActivity(intent)
-
+                    startActivity(Intent(requireContext(), AuthActivity::class.java))
                     requireActivity().finish()
                 }
 
-                .setNegativeButton("Tidak") { dialog, _ ->
-
-                    dialog.dismiss()
-                }
+                .setNegativeButton("Tidak", null)
                 .show()
         }
-    }
+        binding.button2.setOnClickListener {
+            val intent = Intent(requireContext(), SeventhActivity::class.java)
+            startActivity(intent)
+        }
     }
 }
