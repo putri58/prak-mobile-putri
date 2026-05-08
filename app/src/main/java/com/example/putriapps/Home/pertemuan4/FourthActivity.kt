@@ -1,18 +1,13 @@
-package com.example.putriapps.pertemuan4
+package com.example.putriapps.Home.pertemuan4
 
-import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.putriapps.MainActivity
 import com.example.putriapps.R
 import com.example.putriapps.databinding.ActivityFourthBinding
-import com.example.putriapps.databinding.ActivityThirdBinding
-import com.example.putriapps.pertemuan3.ThirdResultActivity
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.snackbar.Snackbar
 

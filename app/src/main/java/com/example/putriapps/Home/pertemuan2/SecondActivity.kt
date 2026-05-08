@@ -1,4 +1,4 @@
-package com.example.putriapps.pertemuan2
+package com.example.putriapps.Home.pertemuan2
 
 import android.os.Bundle
 import android.util.Log

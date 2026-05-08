@@ -4,14 +4,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#E727F5"
-    tools:context=".pertemuan7.TigaFragment">
+    tools:context=".Home.pertemuan7.TigaFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
 
-        android:text="HAIIIIIIIII INI FRAGMANT TIGA"
+        android:text="YAHHAHAHAHYUUUUU"
         android:textAlignment="center" />
 
 </FrameLayout>

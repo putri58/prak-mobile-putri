@@ -2,17 +2,14 @@ package com.example.putriapps
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.putriapps.R
 import com.example.putriapps.databinding.ActivityMainBinding
-import com.example.putriapps.databinding.ActivityThirdBinding
-import com.example.putriapps.pertemuan4.FourthActivity
-import com.example.putriapps.pertemuan7.SeventhActivity
+import com.example.putriapps.Home.pertemuan4.FourthActivity
+import com.example.putriapps.Home.pertemuan7.SeventhActivity
 
 class MainActivity : AppCompatActivity() {
 

@@ -28,7 +28,7 @@ class AuthActivity : AppCompatActivity() {
         // Jika sudah login
         if (isLogin) {
 
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, BaseActivity::class.java)
             startActivity(intent)
             finish()
         }
