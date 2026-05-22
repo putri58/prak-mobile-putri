@@ -14,6 +14,9 @@
         android:supportsRtl="false"
         android:theme="@style/Theme.PutriApps">
         <activity
+            android:name=".Home.pertemuan9.NinthActivity"
+            android:exported="false" />
+        <activity
             android:name=".SplashScreenActivity"
             android:exported="false" />
         <activity

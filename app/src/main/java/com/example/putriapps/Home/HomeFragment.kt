@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.putriapps.AuthActivity
 import com.example.putriapps.Home.pertemuan4.FourthActivity
 import com.example.putriapps.Home.pertemuan7.SeventhActivity
+import com.example.putriapps.Home.pertemuan9.NinthActivity
 import com.example.putriapps.R
 import com.example.putriapps.databinding.FragmentHomeBinding
 
@@ -68,6 +69,10 @@ class HomeFragment : Fragment() {
         }
         binding.button2.setOnClickListener {
             val intent = Intent(requireContext(), SeventhActivity::class.java)
+            startActivity(intent)
+        }
+        binding.button3.setOnClickListener {
+            val intent = Intent(requireContext(), NinthActivity::class.java)
             startActivity(intent)
         }
     }
