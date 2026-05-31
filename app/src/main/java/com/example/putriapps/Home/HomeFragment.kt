@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.example.putriapps.AuthActivity
+import com.example.putriapps.Home.pertemuan10.TenthActivity
 import com.example.putriapps.Home.pertemuan2.SecondActivity
 import com.example.putriapps.Home.pertemuan3.ThirdActivity
 import com.example.putriapps.Home.pertemuan4.FourthActivity
@@ -83,6 +84,10 @@ class HomeFragment : Fragment() {
         }
         binding.button5.setOnClickListener {
             val intent = Intent(requireContext(), SecondActivity::class.java)
+            startActivity(intent)
+        }
+        binding.button6.setOnClickListener {
+            val intent = Intent(requireContext(), TenthActivity::class.java)
             startActivity(intent)
         }
 
