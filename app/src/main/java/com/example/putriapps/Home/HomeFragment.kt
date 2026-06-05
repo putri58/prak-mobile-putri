@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.lifecycleScope
 import com.example.putriapps.AuthActivity
 import com.example.putriapps.Home.pertemuan10.TenthActivity
 import com.example.putriapps.Home.pertemuan2.SecondActivity
@@ -17,7 +18,9 @@ import com.example.putriapps.Home.pertemuan4.FourthActivity
 import com.example.putriapps.Home.pertemuan7.SeventhActivity
 import com.example.putriapps.Home.pertemuan9.NinthActivity
 import com.example.putriapps.R
+import com.example.putriapps.data.api.CatFactApiClient
 import com.example.putriapps.databinding.FragmentHomeBinding
+import kotlinx.coroutines.launch
 
 class HomeFragment : Fragment() {
     private var _binding: FragmentHomeBinding? = null
@@ -91,5 +94,18 @@ class HomeFragment : Fragment() {
             startActivity(intent)
         }
 
+        loadCatFact()
+
+    }
+
+    private fun loadCatFact() {
+        lifecycleScope.launch {
+            try {
+                val response = CatFactApiClient.apiService.getCatFact()
+                binding.tvCatFact.text = "\"${response.fact}\""
+            } catch (e: Exception) {
+                binding.tvCatFact.text = "Gagal mengambil fakta kucing."
+            }
+        }
     }
 }
