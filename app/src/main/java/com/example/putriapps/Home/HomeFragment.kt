@@ -7,9 +7,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.putriapps.AuthActivity
 import com.example.putriapps.Home.pertemuan10.TenthActivity
 import com.example.putriapps.Home.pertemuan2.SecondActivity
@@ -17,8 +19,10 @@ import com.example.putriapps.Home.pertemuan3.ThirdActivity
 import com.example.putriapps.Home.pertemuan4.FourthActivity
 import com.example.putriapps.Home.pertemuan7.SeventhActivity
 import com.example.putriapps.Home.pertemuan9.NinthActivity
+import com.example.putriapps.Home.photo.PhotoAdapter
 import com.example.putriapps.R
 import com.example.putriapps.data.api.CatFactApiClient
+import com.example.putriapps.data.api.PhotoApiClient
 import com.example.putriapps.databinding.FragmentHomeBinding
 import kotlinx.coroutines.launch
 
@@ -50,6 +54,11 @@ class HomeFragment : Fragment() {
             intent.putExtra("usia", 25)
 
             startActivity(intent)
+
+        }
+
+        binding.btnRefresh.setOnClickListener {
+            loadCatFact()
         }
 
         // FITUR BARU LOGOUT
@@ -95,6 +104,7 @@ class HomeFragment : Fragment() {
         }
 
         loadCatFact()
+        loadPhoto()
 
     }
 
@@ -108,4 +118,27 @@ class HomeFragment : Fragment() {
             }
         }
     }
+
+    private fun loadPhoto() {
+        lifecycleScope.launch {
+            try {
+                val photos = PhotoApiClient.apiService.getPhotos()
+                val adapter = PhotoAdapter(photos)
+                binding.rvGallery.adapter = adapter
+
+                /** List Tampil Vertical*/
+                binding.rvGallery.layoutManager = LinearLayoutManager(requireContext())
+
+                /** List Tampil Horizontal */
+                //binding.rvGallery.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+
+                /** List Tampil Grid */
+                //binding.rvGallery.layoutManager = GridLayoutManager(requireContext(),2)
+
+            } catch (e: Exception) {
+                Toast.makeText(requireContext(), "Gagal memuat gambar", Toast.LENGTH_SHORT).show()
+            }
+        }
+    }
+
 }
