@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment
 import com.example.putriapps.Home.HomeFragment
 import com.example.putriapps.Message.MessageFragment
 import com.example.putriapps.More.MoreFragment
+import com.example.putriapps.Note.NoteFragment
 import com.example.putriapps.databinding.ActivityBaseBinding
 
 class BaseActivity : AppCompatActivity() {
@@ -37,6 +38,10 @@ class BaseActivity : AppCompatActivity() {
                 }
                 R.id.more -> {
                     replaceFragment(MoreFragment())
+                    true
+                }
+                R.id.note -> {
+                    replaceFragment(NoteFragment())
                     true
                 }
                 else -> false // return false jika item tidak ada yang di klik
