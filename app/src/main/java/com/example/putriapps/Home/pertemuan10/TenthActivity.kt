@@ -29,7 +29,7 @@ class TenthActivity : AppCompatActivity() {
         TabLayoutMediator(binding.tabLayout, binding.viewPager) { tab, position ->
             when (position) {
                 0 -> {
-                    tab.text = "Tab A"
+                    tab.text = "CAPTURE"
                     //Tambah Icon
                     tab.icon = ContextCompat.getDrawable(  this, R.drawable.ic_home)
                     //Tambah Badge Tanpa nomor (hanya titik)
@@ -37,7 +37,7 @@ class TenthActivity : AppCompatActivity() {
                     badge.isVisible = true
                 }
                 1 -> {
-                    tab.text = "Tab B"
+                    tab.text = "QR CODE"
                     //Tambah Icon
                     tab.icon = ContextCompat.getDrawable(  this, R.drawable.ic_home)
                     //Tambah Badge dengan nomor
@@ -46,7 +46,7 @@ class TenthActivity : AppCompatActivity() {
                     badge.number = 5
                 }
                 2 -> {
-                    tab.text = "Produk"
+                    tab.text = "SCAN"
                     //Tambah Icon
                     tab.icon = ContextCompat.getDrawable(  this, R.drawable.ic_home)
                     //Tambah Badge dengan nomor

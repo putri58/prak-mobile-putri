@@ -12,9 +12,9 @@ class TenthTabsAdapter(activity: FragmentActivity) : FragmentStateAdapter(activi
     // Menentukan Fragment mana yang akan ditampilkan berdasarkan posisi tab
     override fun createFragment(position: Int): Fragment {
         return when (position) {
-            0 -> TabAFragment()
-            1 -> TabBFragment()
-            2 -> TabCFragment()
+            0 -> TabCaptureFragment()
+            1 -> TabQrcodeFragment()
+            2 -> TabScanFragment()
             else -> throw IllegalStateException("Posisi tidak valid")
         }
     }

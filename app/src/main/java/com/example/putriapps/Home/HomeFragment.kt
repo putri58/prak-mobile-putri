@@ -14,6 +14,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.putriapps.AuthActivity
 import com.example.putriapps.Home.pertemuan10.TenthActivity
+import com.example.putriapps.Home.pertemuan13.ThirteenthActivity
 import com.example.putriapps.Home.pertemuan2.SecondActivity
 import com.example.putriapps.Home.pertemuan3.ThirdActivity
 import com.example.putriapps.Home.pertemuan4.FourthActivity
@@ -100,6 +101,10 @@ class HomeFragment : Fragment() {
         }
         binding.button6.setOnClickListener {
             val intent = Intent(requireContext(), TenthActivity::class.java)
+            startActivity(intent)
+        }
+        binding.button7.setOnClickListener {
+            val intent = Intent(requireContext(), ThirteenthActivity::class.java)
             startActivity(intent)
         }
 
