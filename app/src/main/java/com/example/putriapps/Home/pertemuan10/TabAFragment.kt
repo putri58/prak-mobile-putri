@@ -19,6 +19,7 @@ import com.example.putriapps.R
 import com.example.putriapps.databinding.FragmentTabABinding
 // PERBAIKAN 1: Pastikan menggunakan android.Manifest, bukan java.util.jar.Manifest
 import android.Manifest
+import com.example.putriapps.utils.PermissionHelper
 
 class TabCaptureFragment : Fragment() {
     private var _binding: FragmentTabABinding? = null
@@ -55,27 +56,24 @@ class TabCaptureFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.btnCapture.setOnClickListener {
-            if (hasCameraPermission()) {
-                openCamera()
+            if (!PermissionHelper.hasPermission(
+                    requireActivity(),
+                    Manifest.permission.CAMERA)) {
+                PermissionHelper.requestPermission(
+                    permissionLauncher,
+                    Manifest.permission.CAMERA
+                )
             } else {
-                permissionLauncher.launch(Manifest.permission.CAMERA)
+                openCamera()
             }
         }
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
-    }
-
-    // PERBAIKAN 2: Menambahkan fungsi cek izin kamera yang hilang
-    private fun hasCameraPermission(): Boolean {
-        return ContextCompat.checkSelfPermission(
-            requireContext(),
-            Manifest.permission.CAMERA
-        ) == PackageManager.PERMISSION_GRANTED
-    }
-
+//    override fun onDestroyView() {
+//        super.onDestroyView()
+//        _binding = null
+//    }
+//
     private fun openCamera() {
         val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
         currentPhotoUri = createGalleryPhotoUri()
